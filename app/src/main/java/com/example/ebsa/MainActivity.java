@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
        if(intent_speech.resolveActivity(getPackageManager())!=null){
            startActivityForResult(intent_speech,10);
        }else{
-           text_to_Speech("Your device don't support Speech input");
+           text_to_Speech("Your device don't support Speech input !");
        }
     }
 
