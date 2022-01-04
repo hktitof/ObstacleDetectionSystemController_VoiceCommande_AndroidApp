@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
         textview.setText(speech);
     }
     public void Define_commande(String command) throws InterruptedException {
-        if(command.toLowerCase(Locale.ROOT).equals("enable bluetooth")){
+        if(command.toLowerCase(Locale.ROOT).contains("enable bluetooth")){
             if(!bluetoothAdapter.isEnabled()){
                 text_to_Speech("Turning ON Bluetooth");
                 Thread.sleep(2000);
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
             }else{
                 text_to_Speech("Bluetooth is Already ON");
             }
-        }else if(command.toLowerCase(Locale.ROOT).equals("disable bluetooth")){
+        }else if(command.toLowerCase(Locale.ROOT).contains("disable bluetooth")){
             if(!bluetoothAdapter.isEnabled()){
                 text_to_Speech("Bluetooth is Already Disabled");
             }else{
@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
                 bluetoothAdapter.disable();
                 text_to_Speech("Bluetooth is Disabled");
             }
-        }else if(command.toLowerCase(Locale.ROOT).equals("connect to system")){
+        }else if(command.toLowerCase(Locale.ROOT).contains("connect to system")){
             if(!bluetoothAdapter.isEnabled()){
                 text_to_Speech("Please Enable Bluetooth");
             }else{
@@ -187,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-        }else if(command.toLowerCase(Locale.ROOT).equals("start system")){
+        }else if(command.toLowerCase(Locale.ROOT).contains("start system")){
             if(con_status){
                 thread = new Thread_check_socket_status(bluetoothSocket,handler_change_text,vibrator);
                 thread.start();
@@ -208,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-        }else if(command.toLowerCase(Locale.ROOT).equals("change to vibration")){
+        }else if(command.toLowerCase(Locale.ROOT).contains("change to vibration")){
             data_visual_type=2;
             text_to_Speech("Seuccefully Changed to vibration mode");
 
